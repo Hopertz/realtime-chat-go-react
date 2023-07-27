@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import "./Message.scss";
+import "./Message.css";
+import React, { useState, useEffect } from "react";
 
-class Message extends Component {
-  constructor(props) {
-    super(props);
-    let temp = JSON.parse(this.props.message);
-    this.state = {
-      message: temp
-    };
-  }
+const Message = (props) => {
+  const [message, setMessage] = useState({});
 
-  render() {
-    return <div className="Message">{this.state.message.body}</div>;
-  }
-}
+  useEffect(() => {
+    console.log(props.message)
+    const temp = JSON.parse(props.message);
+    setMessage(temp);
+  }, [props.message]);
+
+  return <div className="chat-message">{message.body} - {message.user} </div>;
+};
 
 export default Message;
+

@@ -2,4 +2,4 @@ module github.com/hopertz/realtime-chat-go-react
 
 go 1.19
 
-require github.com/gorilla/websocket v1.5.0 // indirect
+require github.com/gorilla/websocket v1.5.0
